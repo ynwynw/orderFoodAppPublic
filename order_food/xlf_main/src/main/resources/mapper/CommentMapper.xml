@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.CommentMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.Comment">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="foodId" column="food_id" jdbcType="BIGINT"/>
+            <result property="parentId" column="parent_id" jdbcType="BIGINT"/>
+            <result property="replyUid" column="reply_uid" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_id,content,
+        create_time,food_id,parent_id,
+        reply_uid
+    </sql>
+    <select id="adminComments" resultType="com.xlf.vo.CommentVO">
+        SELECT c.*,u.nick_name , u.avatar,uu.nick_name as reply_nickname
+        FROM comment c
+                 left join sys_user u on(c.uid=u.id)
+                 left join food f on(c.blog_id=f.id)
+                 left join sys_user uu on(c.reply_uid=uu.id)
+            ${ew.customSqlSegment}
+    </select>
+</mapper>

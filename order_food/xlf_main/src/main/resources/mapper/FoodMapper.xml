@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.FoodMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.Food">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="price" column="price" jdbcType="FLOAT"/>
+            <result property="pricutre" column="pricutre" jdbcType="VARCHAR"/>
+            <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="inventory" column="inventory" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="sellId" column="sell_id" jdbcType="BIGINT"/>
+            <result property="typeId" column="type_id" jdbcType="BIGINT"/>
+            <result property="packagingFee" column="packaging_fee" jdbcType="FLOAT"/>
+            <result property="sort" column="sort" jdbcType="INTEGER"/>
+            <result property="unit" column="unit" jdbcType="VARCHAR"/>
+            <result property="useProperty" column="use_property" jdbcType="BIT"/>
+            <result property="minBuyNum" column="min_buy_num" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,price,
+        pricutre,remarks,status,
+        inventory,create_time,update_time,
+        sell_id,type_id,packaging_fee,
+        sort,unit,use_property,
+        min_buy_num
+    </sql>
+    <update id="updateNum">
+        update food set inventory=inventory-${num} where food.id=${foodId} and food.inventory >= ${num}
+    </update>
+    <select id="getFoodMinListByOrderIdAndFoodId" resultType="com.xlf.vo.FoodMinVO">
+
+    </select>
+    <select id="getFoodPage" resultType="com.xlf.vo.FoodPageVO">
+        select food.*,`type`.name as typeName
+                from food left join type on food.type_id = `type`.id
+         ${ew.customSqlSegment}
+    </select>
+    <select id="getMinListByFoodId" resultType="com.xlf.vo.FoodMinVO">
+        select food.id ,food.name
+        from food left join food_food as ff on food.id = ff.mix_id
+        where ff.food_id=#{id}
+    </select>
+    <select id="getMinList" resultType="com.xlf.vo.FoodMinVO">
+        select food.id,food.name
+        from food left join `type` on food.type_id = `type`.id
+        where `type`.name = "小料"
+    </select>
+    <select id="getClientOrderGoodsByOrderId" resultType="com.xlf.vo.ClientOrderGoodVO">
+            select food.name, t_order_details.price , t_order_details.property_text as propertyText , t_order_details.num
+            from food left join t_order_details on food.id = t_order_details.food_id
+            where t_order_details.order_id = ${id}
+    </select>
+</mapper>

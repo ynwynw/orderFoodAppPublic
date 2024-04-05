@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.OrderDetailsMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.OrderDetails">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="orderId" column="order_id" jdbcType="BIGINT"/>
+            <result property="foodId" column="food_id" jdbcType="BIGINT"/>
+            <result property="foodParentId" column="food_parent_id" jdbcType="BIGINT"/>
+            <result property="num" column="num" jdbcType="INTEGER"/>
+            <result property="price" column="Price" jdbcType="DECIMAL"/>
+            <result property="propertyText" column="property_text" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,order_id,food_id,
+        food_parent_id,num,Price,property_text
+    </sql>
+<!--   建复合索引(id,food_parent_id)-->
+    <select id="getIdsByOrderId" resultType="com.xlf.domain.OrderDetails">
+        select * from t_order_details t
+        where t.order_id = ${id} and t.food_parent_id=${parent_id}
+    </select>
+</mapper>

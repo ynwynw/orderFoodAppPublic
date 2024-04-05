@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.RoleMenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.RoleMenu">
+            <id property="roleId" column="role_id" jdbcType="BIGINT"/>
+            <id property="menuId" column="menu_id" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        role_id,menu_id
+    </sql>
+
+    <select id="GetRoleMenuById" parameterType="java.lang.Long" resultType="java.lang.Long">
+        select sys_role_menu.menu_id from sys_role_menu where sys_role_menu.role_id=#{id}
+    </select>
+</mapper>

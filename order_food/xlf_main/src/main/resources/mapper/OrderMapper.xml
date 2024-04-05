@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.OrderMapper">
+
+
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.Order">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="orderNo" column="order_no" jdbcType="VARCHAR"/>
+        <result property="userId" column="user_id" jdbcType="BIGINT"/>
+        <result property="handlerId" column="handler_id" jdbcType="BIGINT"/>
+        <result property="total" column="total" jdbcType="DECIMAL"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+        <result property="takeFoodCode" column="take_food_code" jdbcType="VARCHAR"/>
+        <result property="seatId" column="seat_id" jdbcType="BIGINT"/>
+        <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
+        <result property="achievementTime" column="achievement_time" jdbcType="TIMESTAMP"/>
+        <result property="edc" column="edc" jdbcType="TIMESTAMP"/>
+        <result property="payStatus" column="pay_status" jdbcType="VARCHAR"/>
+        <result property="payName" column="pay_name" jdbcType="VARCHAR"/>
+        <result property="payCode" column="pay_code" jdbcType="VARCHAR"/>
+        <result property="payTime" column="pay_time" jdbcType="TIMESTAMP"/>
+        <result property="propertyText" column="property_text" jdbcType="VARCHAR"/>
+        <result property="mobile" column="mobile" jdbcType="VARCHAR"/>
+        <result property="num" column="num" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,order_no,user_id,
+        handler_id,total,status,
+        remarks,take_food_code,seat_id,
+        created_at,achievement_time,edc,
+        pay_status,pay_name,pay_code,
+        pay_time,property_text,mobile,num
+    </sql>
+
+    <resultMap id="BaseResultMap2" type="com.xlf.vo.OrderVO" extends="BaseResultMap">
+        <association property="seat" javaType="com.xlf.domain.Seat">
+            <result property="id" column="seat_id"/>
+            <result property="num" column="seat_num"/>
+            <result property="maxCapacity" column="seat_max_capacity"/>
+            <result property="remark" column="seat_remark"/>
+        </association>
+        <association property="user" javaType="com.xlf.domain.User">
+            <result property="id" column="u1_id"/>
+            <result property="userName" column="u1_userName"/>
+            <result property="phoneNumber" column="u1_phoneNumber"/>
+       </association>
+        <association property="handler" javaType="com.xlf.domain.User">
+            <result property="id" column="u2_id"/>
+            <result property="userName" column="u2_userName"/>
+        </association>
+
+<!--        <collection property="foods" javaType="java.util.List" ofType="com.xlf.vo.FoodVO" column="id" select="com.xlf.mapper.FoodMapper.selectFoodVOListByOrderId"/>-->
+    </resultMap>
+    <select id="getOrderPage" resultMap="BaseResultMap2">
+        select o1.*,
+               u1.id as u1_id,
+               u1.user_name as u1_userName,
+               u1.phone_number as u1_phoneNumber,
+--                u1.wx_number as u1_wxNumber,
+--                u1.status as u1_status,
+--                u1.avatar as u1_avatar,
+--                u1.sex as u1_sex,
+--                u1.Ip as u1.Ip,
+--                u1.ip_source as u1.
+               u2.id as u2_id,
+               u2.user_name as u2_userName,
+               seat.id as seat_id,
+               seat.num as seat_num,
+               seat.max_capacity as seat_max_capacity,
+               seat.remark as seat_remark
+        from t_order o1
+                 left join seat on o1.seat_id=seat.id
+                 left join sys_user u1 on o1.user_id=u1.id
+                 left join sys_user u2 on o1.handler_id=u2.id
+            ${ew.customSqlSegment}
+    </select>
+    <select id="getOrderStatusFoodByOrderId" resultType="com.xlf.dto.StatusDTO">
+        select pay_status as payStatus ,status as orderStatus,remarks
+        from t_order
+        where id=${id}
+    </select>
+    <select id="getClientOrderPage" resultType="com.xlf.vo.ClientOrderPageVO">
+        select t_order.id,t_order.order_no as orderNo,t_order.created_at as createdAt,t_order.num as goodsNum,t_order.total as amount
+            from t_order
+    </select>
+</mapper>

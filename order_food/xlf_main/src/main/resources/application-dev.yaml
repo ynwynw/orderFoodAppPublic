@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/orderfoodapp?characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cache:
+    redis:
+      time-to-live: 1800000   #设置缓存过期时间30分钟，可选
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+server:
+  port: 8088
+# 上传模式
+upload:
+  mode: local
+  local:
+    # classpath: url别加static/
+    url: http://localhost:${server.port}/
+#    上传到项目的static下
+    path: static/
+qiniu:
+  accessKey:
+  accessSecretKey:
+
+#小程序登录配置
+wx:
+  url: https://api.weixin.qq.com/sns/jscode2session
+  appId: wx1080ebc217c9abb8
+  appSecret: 0707d029dee8e549c350df42e051b6f4

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "支付",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "usingComponents": {
+    "list-cell": "/components/list-cell/list-cell",
+    "modal": "/components/modal/modal"
+  }
+}

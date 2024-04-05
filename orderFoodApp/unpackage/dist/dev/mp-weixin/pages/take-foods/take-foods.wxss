@@ -1,0 +1,281 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+@font-face {
+  font-family: "iconfont";
+  src: url("//at.alicdn.com/t/font_1789197_z1gzlwq7idq.ttf?t=1589441233693") format("truetype");
+}
+.iconfont.data-v-d6682034 {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.iconshoucang.data-v-d6682034:before {
+  content: "\e667";
+}
+.iconshoucangfill.data-v-d6682034:before {
+  content: "\e6c9";
+}
+.iconjifen.data-v-d6682034:before {
+  content: "\e642";
+}
+.iconradio-button-off.data-v-d6682034:before {
+  content: "\e688";
+}
+.iconradio-button-on.data-v-d6682034:before {
+  content: "\e689";
+}
+.iconhelp.data-v-d6682034:before {
+  content: "\e752";
+}
+.iconwxpay.data-v-d6682034:before {
+  content: "\e611";
+}
+.iconbalance.data-v-d6682034:before {
+  content: "\e619";
+}
+.iconadd-select.data-v-d6682034:before {
+  content: "\e7b0";
+}
+.iconsami-select.data-v-d6682034:before {
+  content: "\e7b1";
+}
+.iconmap.data-v-d6682034:before {
+  content: "\e758";
+}
+.iconsuccess.data-v-d6682034:before {
+  content: "\e767";
+}
+.iconsuccess-fill.data-v-d6682034:before {
+  content: "\e78d";
+}
+.iconiconset0136.data-v-d6682034:before {
+  content: "\e623";
+}
+.iconzan.data-v-d6682034:before {
+  content: "\e640";
+}
+.iconjifenqiandao.data-v-d6682034:before {
+  content: "\e6a6";
+}
+.iconshouyeshouye.data-v-d6682034:before {
+  content: "\e606";
+}
+.icondaohang.data-v-d6682034:before {
+  content: "\e641";
+}
+.iconwodelianxikefu.data-v-d6682034:before {
+  content: "\e671";
+}
+.iconwodexinyuan.data-v-d6682034:before {
+  content: "\e675";
+}
+.iconphone.data-v-d6682034:before {
+  content: "\e6dd";
+}
+.icondingdan.data-v-d6682034:before {
+  content: "\e645";
+}
+.iconliwu.data-v-d6682034:before {
+  content: "\e61c";
+}
+.iconyinpinyinliao.data-v-d6682034:before {
+  content: "\e60d";
+}
+.iconyinpin.data-v-d6682034:before {
+  content: "\e70b";
+}
+.iconwaimaixinxi.data-v-d6682034:before {
+  content: "\e685";
+}
+.iconico.data-v-d6682034:before {
+  content: "\e646";
+}
+.iconwode.data-v-d6682034:before {
+  content: "\e616";
+}
+.icongengduofuwu.data-v-d6682034:before {
+  content: "\e607";
+}
+.iconqucan.data-v-d6682034:before {
+  content: "\e625";
+}
+.iconyou.data-v-d6682034:before {
+  content: "\e618";
+}
+.iconshouhuodizhi.data-v-d6682034:before {
+  content: "\e666";
+}
+.iconshangcheng.data-v-d6682034:before {
+  content: "\e63b";
+}
+.iconadd.data-v-d6682034:before {
+  content: "\e742";
+}
+.iconarrow-right.data-v-d6682034:before {
+  content: "\e743";
+}
+.iconarrow-lift.data-v-d6682034:before {
+  content: "\e744";
+}
+.iconarrow-up.data-v-d6682034:before {
+  content: "\e745";
+}
+.iconclose.data-v-d6682034:before {
+  content: "\e747";
+}
+.iconleftbutton.data-v-d6682034:before {
+  content: "\e755";
+}
+.iconreduce.data-v-d6682034:before {
+  content: "\e75e";
+}
+.iconseleted.data-v-d6682034:before {
+  content: "\e763";
+}
+.iconRightbutton.data-v-d6682034:before {
+  content: "\e765";
+}
+.iconleftbutton-fill.data-v-d6682034:before {
+  content: "\e782";
+}
+.iconRightbutton-fill.data-v-d6682034:before {
+  content: "\e78a";
+}
+.iconarrow-down.data-v-d6682034:before {
+  content: "\e7b2";
+}
+.iconaixin1.data-v-d6682034:before {
+  content: "\e63c";
+}
+.order-box.data-v-d6682034 {
+  padding: 30rpx;
+}
+.drinks-img.data-v-d6682034 {
+  width: 260rpx;
+  height: 260rpx;
+}
+.tips.data-v-d6682034 {
+  margin: 60rpx 0 80rpx;
+  line-height: 48rpx;
+}
+.drink-btn.data-v-d6682034 {
+  width: 320rpx;
+  border-radius: 50rem !important;
+  margin-bottom: 40rpx;
+  font-size: 28rpx;
+  line-height: 3.0;
+}
+.section.data-v-d6682034 {
+  position: relative;
+}
+.section.data-v-d6682034::before {
+  content: "";
+  position: absolute;
+  background-color: #F1F8FA;
+  width: 30rpx;
+  height: 30rpx;
+  bottom: -15rpx;
+  z-index: 10;
+  border-radius: 100%;
+  left: -15rpx;
+}
+.section.data-v-d6682034::after {
+  content: "";
+  position: absolute;
+  background-color: #F1F8FA;
+  width: 30rpx;
+  height: 30rpx;
+  bottom: -15rpx;
+  z-index: 10;
+  border-radius: 100%;
+  right: -15rpx;
+}
+.pay-cell.data-v-d6682034 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #5A5B5C;
+  margin-bottom: 40rpx;
+}
+.pay-cell.data-v-d6682034:nth-last-child(1) {
+  margin-bottom: 0;
+}
+.sort-num.data-v-d6682034 {
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #5A5B5C;
+  line-height: 2;
+}
+.steps__img-column.data-v-d6682034 {
+  display: flex;
+  margin: 30rpx 0;
+}
+.steps__img-column .steps__img-column-item.data-v-d6682034 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps__img-column .steps__img-column-item image.data-v-d6682034 {
+  width: 80rpx;
+  height: 80rpx;
+}
+.steps__text-column.data-v-d6682034 {
+  display: flex;
+  margin-bottom: 40rpx;
+}
+.steps__text-column .steps__text-column-item.data-v-d6682034 {
+  flex: 1;
+  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #919293;
+}
+.steps__text-column .steps__text-column-item.active.data-v-d6682034 {
+  color: #5A5B5C;
+  font-weight: bold;
+}
+.steps__text-column .steps__text-column-item.active .steps__column-item-line.data-v-d6682034 {
+  background-color: #5A5B5C;
+}
+.steps__text-column .steps__text-column-item .steps__column-item-line.data-v-d6682034 {
+  flex: 1;
+  height: 2rpx;
+  background-color: #919293;
+  -webkit-transform: scaleY(0.5);
+          transform: scaleY(0.5);
+}
+.steps__text-column .steps__text-column-item .steps__text-column-item-text.data-v-d6682034 {
+  margin: 0 8px;
+}
+

@@ -1,0 +1,24 @@
+{
+    "pages": [
+        "pages/me/me",
+        "pages/index/index",
+        "pages/menu/menu",
+        "pages/take-foods/take-foods",
+        "pages/login/login",
+        "pages/me/member-code",
+        "pages/me/userinfo",
+        "pages/pay/pay",
+        "pages/remark/remark",
+        "pages/orders/orders",
+        "pages/orders/detail"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}

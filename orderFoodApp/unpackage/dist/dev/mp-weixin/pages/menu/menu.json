@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "usingComponents": {
+    "modal": "/components/modal/modal",
+    "popup-layer": "/components/popup-layer/popup-layer"
+  }
+}

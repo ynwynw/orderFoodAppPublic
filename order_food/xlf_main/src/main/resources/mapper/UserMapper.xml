@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.User">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="nickName" column="nick_name" jdbcType="VARCHAR"/>
+            <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR"/>
+            <result property="wxNumber" column="wx_number" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="avatar" column="avatar" jdbcType="VARCHAR"/>
+            <result property="sex" column="sex" jdbcType="INTEGER"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="ip" column="Ip" jdbcType="VARCHAR"/>
+            <result property="ipSource" column="ip_source" jdbcType="VARCHAR"/>
+            <result property="lastTime" column="last_time" jdbcType="TIME"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="lastIp" column="last_ip" jdbcType="VARCHAR"/>
+            <result property="loginType" column="login_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_name,nick_name,
+        phone_number,wx_number,status,
+        avatar,sex,create_time,
+        update_time,Ip,ip_source,
+        last_time,email,password,
+        last_ip,login_type
+    </sql>
+
+
+    <resultMap id="BaseResultMap2" type="com.xlf.vo.AdminUserVO" extends="com.xlf.mapper.UserMapper.BaseResultMap">
+        <collection property="roleList" column="id" select="com.xlf.mapper.RoleMapper.getRoleByUserId"/>
+    </resultMap>
+
+    <select id="getUer" resultMap="BaseResultMap2">
+        select *
+        from
+            sys_user
+                ${ew.customSqlSegment}
+    </select>
+</mapper>

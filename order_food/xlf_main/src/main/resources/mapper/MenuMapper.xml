@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.Menu">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="menuName" column="menu_name" jdbcType="VARCHAR"/>
+            <result property="path" column="path" jdbcType="VARCHAR"/>
+            <result property="component" column="component" jdbcType="VARCHAR"/>
+            <result property="visible" column="visible" jdbcType="TINYINT"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
+            <result property="perms" column="perms" jdbcType="VARCHAR"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="createBy" column="create_by" jdbcType="BIGINT"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateBy" column="update_by" jdbcType="BIGINT"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="delFlag" column="del_flag" jdbcType="TINYINT"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="parentId" column="parent_id" jdbcType="BIGINT"/>
+            <result property="orderNum" column="order_num" jdbcType="INTEGER"/>
+            <result property="menuType" column="menu_type" jdbcType="VARCHAR"/>
+            <result property="isFrame" column="is_frame" jdbcType="BIT"/>
+            <result property="routerName" column="router_name" jdbcType="VARCHAR"/>
+     </resultMap>
+
+    <sql id="Base_Column_List">
+        id,menu_name,path,
+        component,visible,status,
+        perms,icon,create_by,
+        create_time,update_by,update_time,
+        del_flag,remark,parent_id,
+        order_num,menu_type,is_frame,router_name
+    </sql>
+    <select id="selectPermsByUserId" resultType="java.lang.String">
+        select sys_menu.perms from sys_menu
+           left join sys_role_menu  on sys_menu.id=sys_role_menu.menu_id
+           left join sys_role on sys_role_menu.role_id=sys_role.id
+           left join sys_user_role on sys_role.id=sys_user_role.role_id
+        where sys_user_role.user_id=#{id}
+    </select>
+</mapper>

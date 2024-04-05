@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "历史订单",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#ffffff",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "list-cell": "/components/list-cell/list-cell"
+  }
+}

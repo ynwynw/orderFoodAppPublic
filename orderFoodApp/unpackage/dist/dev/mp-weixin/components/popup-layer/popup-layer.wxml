@@ -1,0 +1,1 @@
+<view><view data-event-opts="{{[['tap',[['ableClose',['$event']]]],['touchmove',[['',['$event']]]]]}}" hidden="{{!(ifshow)}}" class="popup-layer" bindtap="__e" catchtouchmove="__e"></view><view data-event-opts="{{[['tap',[['stopEvent',['$event']]]]]}}" class="popup-content" style="{{(_location)}}" catchtap="__e"><slot name="content"></slot></view></view>

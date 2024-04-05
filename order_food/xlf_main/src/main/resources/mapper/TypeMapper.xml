@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlf.mapper.TypeMapper">
+
+    <resultMap id="BaseResultMap" type="com.xlf.domain.Type">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="sort" column="sort" jdbcType="INTEGER"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,sort,
+        icon,status
+    </sql>
+    <select id="getTypePage" resultType="com.xlf.vo.TypeVO">
+        SELECT  t.*, COUNT(b.id) typeCount
+        FROM type t LEFT JOIN food b
+                                      ON t.id = b.type_id
+            ${ew.customSqlSegment}
+    </select>
+    <select id="getTypeCount" resultType="com.xlf.vo.TypeVO">
+        SELECT DISTINCT t.id, t.name, COUNT(b.id) typeCount
+        FROM type t LEFT JOIN food b
+                                      ON t.id = b.type_id
+        GROUP BY t.id
+        ORDER BY COUNT(b.id) DESC
+    </select>
+</mapper>

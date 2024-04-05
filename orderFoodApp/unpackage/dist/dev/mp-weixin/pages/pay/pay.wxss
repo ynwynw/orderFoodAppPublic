@@ -1,0 +1,235 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+@font-face {
+  font-family: "iconfont";
+  src: url("//at.alicdn.com/t/font_1789197_z1gzlwq7idq.ttf?t=1589441233693") format("truetype");
+}
+.iconfont.data-v-c10d0c50 {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.iconshoucang.data-v-c10d0c50:before {
+  content: "\e667";
+}
+.iconshoucangfill.data-v-c10d0c50:before {
+  content: "\e6c9";
+}
+.iconjifen.data-v-c10d0c50:before {
+  content: "\e642";
+}
+.iconradio-button-off.data-v-c10d0c50:before {
+  content: "\e688";
+}
+.iconradio-button-on.data-v-c10d0c50:before {
+  content: "\e689";
+}
+.iconhelp.data-v-c10d0c50:before {
+  content: "\e752";
+}
+.iconwxpay.data-v-c10d0c50:before {
+  content: "\e611";
+}
+.iconbalance.data-v-c10d0c50:before {
+  content: "\e619";
+}
+.iconadd-select.data-v-c10d0c50:before {
+  content: "\e7b0";
+}
+.iconsami-select.data-v-c10d0c50:before {
+  content: "\e7b1";
+}
+.iconmap.data-v-c10d0c50:before {
+  content: "\e758";
+}
+.iconsuccess.data-v-c10d0c50:before {
+  content: "\e767";
+}
+.iconsuccess-fill.data-v-c10d0c50:before {
+  content: "\e78d";
+}
+.iconiconset0136.data-v-c10d0c50:before {
+  content: "\e623";
+}
+.iconzan.data-v-c10d0c50:before {
+  content: "\e640";
+}
+.iconjifenqiandao.data-v-c10d0c50:before {
+  content: "\e6a6";
+}
+.iconshouyeshouye.data-v-c10d0c50:before {
+  content: "\e606";
+}
+.icondaohang.data-v-c10d0c50:before {
+  content: "\e641";
+}
+.iconwodelianxikefu.data-v-c10d0c50:before {
+  content: "\e671";
+}
+.iconwodexinyuan.data-v-c10d0c50:before {
+  content: "\e675";
+}
+.iconphone.data-v-c10d0c50:before {
+  content: "\e6dd";
+}
+.icondingdan.data-v-c10d0c50:before {
+  content: "\e645";
+}
+.iconliwu.data-v-c10d0c50:before {
+  content: "\e61c";
+}
+.iconyinpinyinliao.data-v-c10d0c50:before {
+  content: "\e60d";
+}
+.iconyinpin.data-v-c10d0c50:before {
+  content: "\e70b";
+}
+.iconwaimaixinxi.data-v-c10d0c50:before {
+  content: "\e685";
+}
+.iconico.data-v-c10d0c50:before {
+  content: "\e646";
+}
+.iconwode.data-v-c10d0c50:before {
+  content: "\e616";
+}
+.icongengduofuwu.data-v-c10d0c50:before {
+  content: "\e607";
+}
+.iconqucan.data-v-c10d0c50:before {
+  content: "\e625";
+}
+.iconyou.data-v-c10d0c50:before {
+  content: "\e618";
+}
+.iconshouhuodizhi.data-v-c10d0c50:before {
+  content: "\e666";
+}
+.iconshangcheng.data-v-c10d0c50:before {
+  content: "\e63b";
+}
+.iconadd.data-v-c10d0c50:before {
+  content: "\e742";
+}
+.iconarrow-right.data-v-c10d0c50:before {
+  content: "\e743";
+}
+.iconarrow-lift.data-v-c10d0c50:before {
+  content: "\e744";
+}
+.iconarrow-up.data-v-c10d0c50:before {
+  content: "\e745";
+}
+.iconclose.data-v-c10d0c50:before {
+  content: "\e747";
+}
+.iconleftbutton.data-v-c10d0c50:before {
+  content: "\e755";
+}
+.iconreduce.data-v-c10d0c50:before {
+  content: "\e75e";
+}
+.iconseleted.data-v-c10d0c50:before {
+  content: "\e763";
+}
+.iconRightbutton.data-v-c10d0c50:before {
+  content: "\e765";
+}
+.iconleftbutton-fill.data-v-c10d0c50:before {
+  content: "\e782";
+}
+.iconRightbutton-fill.data-v-c10d0c50:before {
+  content: "\e78a";
+}
+.iconarrow-down.data-v-c10d0c50:before {
+  content: "\e7b2";
+}
+.iconaixin1.data-v-c10d0c50:before {
+  content: "\e63c";
+}
+.container.data-v-c10d0c50 {
+  padding: 30rpx;
+}
+.arrow.data-v-c10d0c50 {
+  width: 50rpx;
+  height: 50rpx;
+  position: relative;
+  margin-right: -10rpx;
+}
+.location .store-name.data-v-c10d0c50 {
+  font-size: 32rpx;
+}
+.location .iconfont.data-v-c10d0c50 {
+  font-size: 50rpx;
+  line-height: 100%;
+  color: #ADB838;
+}
+.section-1.data-v-c10d0c50 {
+  margin-bottom: 30rpx;
+}
+.section-1 .contact .contact-tip.data-v-c10d0c50 {
+  margin-left: 10rpx;
+  border: 2rpx solid #ADB838;
+  padding: 6rpx 10rpx;
+  color: #ADB838;
+}
+.section-2 .name-and-props.data-v-c10d0c50 {
+  width: 65%;
+}
+.payment.data-v-c10d0c50 {
+  padding-bottom: 50px;
+}
+.payment .disabled.data-v-c10d0c50 {
+  color: #878889;
+}
+.payment .payment-icon.data-v-c10d0c50 {
+  font-size: 44rpx;
+  margin-right: 10rpx;
+}
+.payment .checkbox.data-v-c10d0c50 {
+  font-size: 36rpx;
+  margin-left: 10rpx;
+}
+.payment .checked.data-v-c10d0c50 {
+  color: #ADB838;
+}
+.pay-box.data-v-c10d0c50 {
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
+  height: 100rpx;
+}
+.modal-content .change-address-btn.data-v-c10d0c50 {
+  line-height: 2;
+  padding: 0 1em;
+}
+.modal-content .pay_btn.data-v-c10d0c50 {
+  width: 100%;
+  border-radius: 50rem !important;
+  line-height: 3;
+}
+
